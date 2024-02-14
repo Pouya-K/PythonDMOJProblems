@@ -1,5 +1,7 @@
-n = int(input())
-heights = [int(x) for x in input().split()]
+import sys
+
+n = int(sys.stdin.readline())
+heights = [int(x) for x in sys.stdin.readline().split()]
 output = [0]
 
 
@@ -14,7 +16,7 @@ def findSymmetry(l, r):
 
 for x in range(2, n + 1):
     lowestSymmetry = float("inf")
-    for i in range(n -x + 1):
+    for i in range(n - x + 1):
         lowestSymmetry = min(lowestSymmetry, findSymmetry(i, i + x - 1))
     output.append(lowestSymmetry)
 
